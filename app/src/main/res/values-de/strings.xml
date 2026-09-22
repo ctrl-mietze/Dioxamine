@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dioxamine</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_adb">ADB</string>
+    <string name="tab_scrcpy">scrcpy</string>
+    <string name="tab_fastboot">Fastboot</string>
+    <string name="tab_plugins">Plugins</string>
+    <string name="tab_settings">Einstellungen</string>
+
+    <!-- ADB Tab -->
+    <string name="adb_subtab_builtin">Integriert</string>
+    <string name="adb_subtab_adb_shell">ADB Shell</string>
+    <string name="adb_subtab_plugins">Plugins</string>
+    
+    <string name="adb_shell_title">ADB-Shell-Unterstützung</string>
+    <string name="feature_coming_soon">Diese Funktion ist bald verfügbar.</string>
+    <string name="adb_shell_info_dialog_title">Hinweis zur ADB Shell</string>
+    <string name="adb_shell_info_dialog_msg_before_link">"Diese integrierte Shell ist ein minimales Terminal zum Ausführen grundlegender Befehle. Ihre Möglichkeiten sind eingeschränkt und sie bietet keine vollständige Terminalemulation. Für eine erweiterte oder vollwertige Terminalumgebung wird das "</string>
+    <string name="adb_shell_info_dialog_link">Terminal-Plugin</string>
+    <string name="adb_shell_info_dialog_msg_after_link"> empfohlen.</string>
+    <string name="adb_shell_dont_show_again">"Nicht mehr anzeigen"</string>
+
+    <string name="no_devices_connected">Keine Geräte verbunden</string>
+    <plurals name="connected_devices_count">
+        <item quantity="one">%1$d Gerät verbunden</item>
+        <item quantity="other">%1$d Geräte verbunden</item>
+    </plurals>
+    <string name="cd_add_device">Gerät hinzufügen</string>
+    <string name="cd_expand_collapse">Erweitern oder einklappen</string>
+    <string name="no_devices_added_hint">Noch keine Geräte hinzugefügt. Tippe auf \'+\', um ein Gerät zu verbinden.</string>
+    
+    <string name="dialog_add_tcp_title">TCP-Gerät hinzufügen</string>
+    <string name="label_ip_address">IP-Adresse</string>
+    <string name="label_port">Port</string>
+    <string name="btn_connect">Verbinden</string>
+    <string name="btn_cancel">Abbrechen</string>
+
+    <string name="status_connected">Verbunden</string>
+    <string name="status_connected_version">Verbunden &#8226; Android %1$s</string>
+    <string name="status_connected_api">Verbunden (API %1$d)</string>
+    <string name="status_connected_version_api">Verbunden &#8226; Android %1$s (API %2$d)</string>
+    <string name="status_connecting">Verbindung wird hergestellt...</string>
+    <string name="cd_remove">Entfernen</string>
+
+    <string name="action_device_info_title">Geräteinformationen</string>
+    <string name="action_device_info_desc">Detaillierte Angaben zu Hardware, Version, Akku, CPU, Auflösung, Betriebszeit und installierten Paketen anzeigen.</string>
+    <string name="dialog_device_info_title">Geräteinformationen</string>
+    <string name="btn_close">Schließen</string>
+    <string name="cd_open_details">Details öffnen</string>
+    <string name="action_device_model">Gerätemodell</string>
+    <string name="action_android_version">Android-Version</string>
+    <string name="action_battery_info">Akkuinformationen</string>
+    <string name="action_serial_number">Seriennummer</string>
+    <string name="action_cpu_info">CPU-Informationen</string>
+    <string name="action_uptime">Betriebszeit</string>
+    <string name="action_screen_resolution">Bildschirmauflösung</string>
+    <string name="action_installed_packages">Anzahl installierter Pakete</string>
+    <string name="connect_device_warning">Verbinde ein Gerät, um diese Aktionen zu verwenden.</string>
+
+    <string name="cd_refresh">Aktualisieren</string>
+    <string name="cd_collapse">Einklappen</string>
+    <string name="cd_expand">Erweitern</string>
+    <string name="status_running_command">Befehl wird ausgeführt...</string>
+    <string name="tap_refresh_hint">Zum Ausführen auf „Aktualisieren“ tippen</string>
+
+    <string name="plugins_title">Eigene Plugins</string>
+    <string name="plugins_description">"Plugins ermöglichen die Installation eigener Plugins oder solcher von anderen Entwicklern."</string>
+    <string name="plugins_docs_prompt">"Die Dokumentation zu Plugins findest du in der "</string>
+    <string name="plugins_docs_link">"Plugin-Dokumentation"</string>
+    <string name="plugins_coming_soon">Eigene Plugins erstellen – bald verfügbar.</string>
+    <string name="plugins_no_plugins">Keine Plugins installiert</string>
+    <string name="plugins_cd_install">Plugin installieren</string>
+    <string name="plugins_msg_installed">%1$s installiert</string>
+    <string name="plugins_msg_updated">%1$s auf %2$s aktualisiert</string>
+    <string name="plugins_msg_rejected">Die installierte Version ist neuer oder identisch</string>
+    <string name="plugins_msg_error">Installation fehlgeschlagen: %1$s</string>
+
+    <!-- Plugin Permission Dialog Strings -->
+    <string name="btn_allow">Zulassen</string>
+    <string name="btn_deny">Ablehnen</string>
+    <string name="plugin_perm_dialog_title">%1$s möchte eine Berechtigung</string>
+    <string name="plugin_perm_shell">Shell-Befehle auf dem verbundenen Gerät ausführen</string>
+    <string name="plugin_perm_push">Dateien auf das verbundene Gerät hochladen</string>
+    <string name="plugin_perm_pull">Dateien vom verbundenen Gerät herunterladen</string>
+    <string name="plugin_perm_install">Pakete auf dem verbundenen Gerät installieren</string>
+    <string name="plugin_perm_forward">Netzwerk-Portweiterleitungen zum/vom verbundenen Gerät erstellen</string>
+    <string name="plugin_perm_reverse">Reverse-Portweiterleitungen vom verbundenen Gerät zu diesem Gerät erstellen</string>
+    <string name="plugin_perm_network">Auf das Netzwerk zugreifen (Internet, lokales Netzwerk und Localhost-Dienste)</string>
+    <string name="plugin_perm_fastboot">Auf die Fastboot-USB-Bootloader-Schnittstelle zugreifen, um Befehle auszuführen, Partitionen zu flashen und neu zu starten</string>
+    <string name="plugin_dialog_attribution">Plugin: %1$s</string>
+    <string name="plugin_open_browser_title">Externen Link öffnen</string>
+    <string name="plugin_open_browser_msg">Dieses Plugin möchte einen externen Link öffnen:\n\n%1$s\n\nMöchtest du fortfahren?</string>
+    <string name="plugin_open_browser_btn_open">Öffnen</string>
+    <string name="plugin_runner_not_found">Plugin nicht gefunden</string>
+    <string name="plugin_menu_info">Info</string>
+    <string name="plugin_menu_uninstall">Deinstallieren</string>
+    <string name="plugin_info_title">Plugin-Details</string>
+    <string name="plugin_info_id">ID: %1$s</string>
+    <string name="plugin_info_version">Version: %1$s</string>
+    <string name="plugin_info_author">Autor: %1$s</string>
+    <string name="plugin_info_entry">Einstiegspunkt: %1$s</string>
+    <string name="plugin_info_permissions">Berechtigungen: %1$s</string>
+    <string name="plugin_uninstall_title">Plugin deinstallieren</string>
+    <string name="plugin_uninstall_confirm">Möchtest du „%1$s“ wirklich deinstallieren?</string>
+    <string name="plugin_msg_uninstalled">Plugin „%1$s“ deinstalliert</string>
+    <string name="cd_more_options">Weitere Optionen</string>
+
+    <!-- Plugin Settings & Permission Manager Strings -->
+    <string name="settings_plugins_title">Plugins</string>
+    <string name="settings_plugins_desc">WebView-Debugging &amp; Berechtigungen</string>
+    <string name="settings_plugins_webview_debug_title">WebView-Debugging</string>
+    <string name="settings_plugins_webview_debug_desc">Inspektion über Chrome DevTools unter chrome://inspect zulassen</string>
+    <string name="settings_plugins_take_effect_hint">Änderungen werden beim nächsten Start des Plugins wirksam</string>
+    <string name="settings_plugins_permissions_title">Plugin-Berechtigungen</string>
+    <string name="settings_plugins_permissions_desc">Berechtigungen installierter Plugins verwalten und entziehen</string>
+    <string name="settings_plugins_btn_manage">Verwalten</string>
+    <string name="settings_plugins_no_permissions">Keine Berechtigungen deklariert</string>
+    <string name="plugin_policy_ask_default">Jedes Mal fragen (Standard)</string>
+    <string name="plugin_policy_ask">Jedes Mal fragen</string>
+    <string name="plugin_policy_always_allow">Immer zulassen</string>
+    <string name="plugin_policy_always_deny">Immer ablehnen</string>
+    <string name="btn_reset_all">Alles zurücksetzen</string>
+
+    <!-- Fastboot Tab -->
+    <string name="fastboot_title">Fastboot-Unterstützung</string>
+    <string name="fastboot_no_device_status">USB-Erkennung aktiv &#8226; Kein Fastboot-Gerät verbunden</string>
+
+    <!-- Scrcpy Tab -->
+    <string name="scrcpy_no_device_title">Kein Gerät ausgewählt</string>
+    <string name="scrcpy_no_device_desc">Verbinde und wähle oben in der Verbindungsleiste ein Gerät aus, um die scrcpy-Bildschirmspiegelung zu konfigurieren und zu starten.</string>
+    <string name="scrcpy_invalid_config_prefix">Ungültige Konfiguration:\n</string>
+    <string name="scrcpy_mirroring_idle">Spiegelung inaktiv</string>
+    <string name="scrcpy_title">scrcpy-Bildschirmspiegelung</string>
+    <string name="scrcpy_target">Ziel: %1$s</string>
+    <string name="scrcpy_target_version">Ziel: %1$s &#8226; Android %2$s</string>
+    <string name="scrcpy_start_mirroring">Spiegelung starten</string>
+    <string name="scrcpy_stop_mirroring">Spiegelung beenden</string>
+    <string name="scrcpy_remember_settings">Für dieses Gerät merken</string>
+    <string name="scrcpy_btn_reset_defaults">Standardeinstellungen wiederherstellen</string>
+    <string name="scrcpy_settings_reset">Einstellungen auf Standard zurückgesetzt</string>
+    <string name="scrcpy_tab_configurator">Konfigurator</string>
+    <string name="scrcpy_tab_logs">Logs</string>
+    <string name="scrcpy_logs_empty">Noch keine scrcpy-Logs.</string>
+
+    <string name="section_video_source">Videoquelle</string>
+    <string name="video_source_screen">Bildschirm</string>
+    <string name="video_source_camera">Kamera</string>
+    <string name="camera_source_subtitle_req">Erfordert Android 12+ (API 31). Gerät verwendet API %1$d.</string>
+
+    <string name="section_camera">Kamera</string>
+    <string name="camera_facing_back">Hinten</string>
+    <string name="camera_facing_front">Vorne</string>
+    <string name="camera_facing_external">Extern</string>
+    <string name="camera_high_speed_title">High-Speed-Modus</string>
+    <string name="camera_high_speed_subtitle">Aufnahme mit 120+ FPS (Geräteunterstützung erforderlich)</string>
+    <string name="label_high_speed_fps">High-Speed-FPS</string>
+    <string name="label_fps_format">%1$d FPS</string>
+    <string name="label_high_speed_res">High-Speed-Auflösung</string>
+    <string name="res_720p">720p</string>
+    <string name="res_1080p">1080p</string>
+    <string name="res_480p">480p</string>
+    <string name="res_auto">Auto</string>
+
+    <string name="section_video">Video</string>
+    <string name="video_enable_title">Video aktivieren</string>
+    <string name="video_enable_subtitle">Bildschirm- oder Kamerabild streamen</string>
+    <string name="scrcpy_audio_only_banner">Audiostreaming aktiv</string>
+    <string name="scrcpy_audio_only_desc">Nur-Audio-Modus (Videostream deaktiviert)</string>
+    <string name="label_resolution">Maximale Größe</string>
+    <string name="label_add_chip">+ Hinzufügen</string>
+    <string name="dialog_add_max_size_title">Benutzerdefinierte Maximalgröße hinzufügen</string>
+    <string name="dialog_add_max_size_msg">Maximale Größe in Pixeln eingeben (z. B. 1440 oder 2160):</string>
+    <string name="dialog_add_fps_title">Benutzerdefinierte Bildrate hinzufügen</string>
+    <string name="dialog_add_fps_msg">Bildrate in FPS eingeben (z. B. 90 oder 144):</string>
+    <string name="dialog_add_bitrate_title">Benutzerdefinierte Bitrate hinzufügen</string>
+    <string name="dialog_add_bitrate_msg">Bitrate in Mbps eingeben (z. B. 16 oder 25):</string>
+    <string name="btn_add">Hinzufügen</string>
+
+    <string name="settings_scrcpy_title">scrcpy</string>
+    <string name="settings_scrcpy_subtitle">Optionen für die scrcpy-Spiegelung konfigurieren</string>
+    <string name="settings_scrcpy_allow_custom_title">Benutzerdefinierte Werte in Konfigurationen zulassen</string>
+    <string name="settings_scrcpy_allow_custom_subtitle">Eigene Werte für maximale Größe, Bildrate und Bitrate hinzufügen</string>
+    <string name="camera_discovering">Kamerafunktionen werden ermittelt...</string>
+    <string name="label_frame_rate">Bildrate</string>
+    <string name="label_bitrate">Bitrate</string>
+    <string name="label_mbps_format">%1$d Mbps</string>
+    <string name="label_codec">Codec</string>
+    <string name="codec_h264">H.264</string>
+    <string name="codec_h265">H.265</string>
+    <string name="codec_av1">AV1</string>
+    <string name="codec_vp8">VP8</string>
+    <string name="codec_vp9">VP9</string>
+    <string name="label_orientation">Ausrichtung</string>
+    <string name="orient_normal">Normal</string>
+    <string name="orient_90">90°</string>
+    <string name="orient_180">180°</string>
+    <string name="orient_270">270°</string>
+    <string name="orient_flip_0">Horizontal spiegeln</string>
+    <string name="orient_flip_90">Um 90° spiegeln</string>
+    <string name="orient_flip_180">Um 180° spiegeln</string>
+    <string name="orient_flip_270">Um 270° spiegeln</string>
+
+    <string name="section_audio">Audio</string>
+    <string name="audio_enable_title">Audio aktivieren</string>
+    <string name="audio_enable_subtitle_ok">Geräteaudio streamen</string>
+    <string name="audio_enable_subtitle_req">Erfordert Android 11+ (API 30). Gerät verwendet API %1$d.</string>
+    <string name="label_audio_source">Quelle</string>
+    <string name="audio_source_device">Geräteaudio</string>
+    <string name="audio_source_mic">Mikrofon</string>
+    <string name="label_audio_format">Format</string>
+    <string name="codec_opus">Opus</string>
+    <string name="codec_aac">AAC</string>
+    <string name="codec_flac">FLAC</string>
+    <string name="audio_dup_title">Gerät nicht stummschalten</string>
+    <string name="audio_dup_subtitle_ok">Gerätelautsprecher aktiv lassen</string>
+    <string name="audio_dup_subtitle_req">Erfordert Android 13+ (API 33)</string>
+
+    <string name="section_display">Anzeige &amp; Steuerung</string>
+    <string name="display_screen_off_title">Bildschirm ausschalten</string>
+    <string name="display_screen_off_subtitle">Gerätebildschirm während der Spiegelung ausgeschaltet lassen</string>
+    <string name="display_floating_nav_title">Schwebende Navigationsleiste</string>
+    <string name="display_floating_nav_subtitle">Vertikale Tasten für Zurück, Home und letzte Apps über dem Bildschirm anzeigen</string>
+    <string name="display_bind_volume_title">Lautstärketasten weiterleiten</string>
+    <string name="display_bind_volume_subtitle">Hardware-Lautstärketasten an das gespiegelte Gerät weiterleiten</string>
+
+    <string name="cd_toggle_torch">Taschenlampe umschalten</string>
+    <string name="cd_rotate_device">Gerät drehen</string>
+    <string name="cd_toggle_fullscreen">Vollbild umschalten</string>
+    <string name="cd_stop_mirroring">Spiegelung beenden</string>
+    <string name="cd_expand_controls">Steuerung anzeigen</string>
+    <string name="cd_collapse_controls">Steuerung ausblenden</string>
+    <string name="cd_nav_back">Zurück</string>
+    <string name="cd_nav_home">Home</string>
+    <string name="cd_nav_recents">Letzte Apps</string>
+
+    <!-- Settings Tab -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_key_title">ADB</string>
+    <string name="settings_adb_subtitle">Schlüsselverwaltung und Einstellungen für lokale Verbindungen</string>
+    <string name="settings_adb_detect_localhost_title">Localhost erkennen</string>
+    <string name="settings_adb_detect_localhost_subtitle">Nach einem aktiven lokalen ADB-Server suchen und zum Verbinden auffordern</string>
+    <string name="settings_adb_autoconnect_localhost_title">Automatisch mit Localhost verbinden</string>
+    <string name="settings_adb_autoconnect_localhost_subtitle">Bei erkanntem lokalen ADB automatisch und ohne Nachfrage verbinden</string>
+    <string name="settings_adb_auth_section">Authentifizierungsschlüssel</string>
+    <string name="settings_key_desc">Das RSA-Schlüsselpaar verwalten, mit dem diese App bei Geräten autorisiert wird.</string>
+    <string name="settings_fingerprint_label">Fingerabdruck:</string>
+    <string name="settings_no_key">Noch kein Schlüssel erzeugt.</string>
+    <string name="settings_btn_regen_key">Autorisierungsschlüssel neu erzeugen</string>
+    <string name="settings_btn_load_custom_key">Eigenen Schlüssel laden</string>
+    <string name="dialog_regen_key_title">Schlüssel neu erzeugen?</string>
+    <string name="dialog_regen_key_msg">Dadurch wird das aktuelle ADB-Schlüsselpaar gelöscht und ein neues erzeugt. Alle zuvor vertrauenswürdigen Geräte müssen erneut autorisiert werden.</string>
+    <string name="btn_regenerate">Neu erzeugen</string>
+
+    <string name="settings_language_title">Sprache</string>
+    <string name="settings_language_system_default">Systemstandard</string>
+    <string name="settings_language_contribute">Zur Übersetzung beitragen</string>
+
+    <string name="settings_theme_title">Design</string>
+    <string name="theme_system">Gerätestandard</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_amoled">AMOLED</string>
+    <string name="settings_theme_dynamic_title">Dynamische Farben (Monet)</string>
+    <string name="settings_theme_dynamic_desc">Farben des Systemhintergrundbilds verwenden</string>
+    <string name="settings_theme_dynamic_req">Erfordert Android 12+</string>
+    <string name="settings_theme_mode_header">Designmodus</string>
+
+    <string name="settings_logs_title">App-Logs</string>
+    <string name="settings_logs_subtitle">Dauerhaft gespeicherte App-Logs exportieren oder löschen</string>
+    <string name="settings_enable_logging_title">Logging aktivieren</string>
+    <string name="settings_enable_logging_subtitle">Interne Log-Ereignisse im Speicher und auf dem Datenträger aufzeichnen</string>
+    <string name="settings_btn_export_all_logs">Logs exportieren</string>
+    <string name="settings_btn_clear_logs">Logs löschen</string>
+    <string name="dialog_clear_logs_title">Alle Logs löschen?</string>
+    <string name="dialog_clear_logs_msg">Dadurch werden alle dauerhaft gespeicherten Logdateien vom Datenträger und alle aktuellen Logs aus dem Arbeitsspeicher endgültig gelöscht.</string>
+    <string name="btn_clear">Löschen</string>
+    <string name="msg_logs_cleared">Alle Logdateien und Speicherpuffer wurden gelöscht.</string>
+    <string name="msg_logs_exported">Logs erfolgreich exportiert.</string>
+
+    <!-- ViewModel State / Error Messages -->
+    <string name="msg_new_key_generated">Neuer Schlüssel erzeugt.</string>
+    <string name="msg_custom_key_loaded">Eigener Schlüssel geladen.</string>
+    <string name="err_usb_connection_lost">USB-Verbindung verloren. Bitte erneut verbinden.</string>
+    <string name="err_connection_lost">Verbindung verloren: %1$s</string>
+    <string name="err_connection_failed">Verbindung fehlgeschlagen</string>
+    <string name="err_usb_connection_failed">USB-Verbindung fehlgeschlagen</string>
+    <string name="err_failed_prefix">Fehlgeschlagen: %1$s</string>
+    <string name="err_shell_format">Fehler (%1$d): %2$s</string>
+    <string name="err_command_timed_out">Zeitüberschreitung beim Befehl – Gerät möglicherweise getrennt</string>
+
+    <!-- File Manager -->
+    <string name="file_manager_title">Geräte-Dateimanager</string>
+    <string name="file_manager_subtitle">Dateien auf dem verbundenen Gerät durchsuchen, anzeigen, hoch- und herunterladen sowie verwalten</string>
+    <string name="file_manager_empty">Verzeichnis ist leer</string>
+    <string name="file_manager_parent_dir">..</string>
+    <string name="file_manager_search_hint">Im aktuellen Ordner suchen…</string>
+    <string name="file_manager_write_denied">In dieses Verzeichnis kann nicht geschrieben werden (Berechtigung verweigert)</string>
+    <string name="file_manager_action_properties">Eigenschaften anzeigen</string>
+    <string name="file_manager_action_download">Herunterladen (Pull)</string>
+    <string name="file_manager_action_rename">Umbenennen / Verschieben</string>
+    <string name="file_manager_action_delete">Löschen</string>
+    <string name="file_manager_properties_title">Dateieigenschaften</string>
+    <string name="file_manager_new_folder">Neuer Ordner</string>
+    <string name="file_manager_create_folder_title">Neuen Ordner erstellen</string>
+    <string name="file_manager_create_folder_msg">Namen des neuen Ordners eingeben:</string>
+    <string name="file_manager_rename_title">Element umbenennen</string>
+    <string name="file_manager_rename_msg">Neuen Pfad oder Namen eingeben:</string>
+    <string name="file_manager_delete_title">Element löschen?</string>
+    <string name="file_manager_delete_msg">Möchtest du „%1$s“ wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="file_manager_downloading_folder">Ordner wird heruntergeladen…</string>
+
+    <!-- Adb / Device Connect / Modes -->
+    <string name="err_invalid_ip_format">Ungültiges IPv4-Adressformat</string>
+    <string name="err_invalid_port_range">Port muss zwischen 1 und 65535 liegen</string>
+    <string name="mode_sideload">Sideload-Modus</string>
+    <string name="mode_recovery">Recovery-Modus</string>
+    <string name="mode_rescue">Rescue-Modus</string>
+    <string name="status_connected_mode">Verbunden [%1$s]</string>
+    <string name="status_connected_recovery_version_api">Verbunden [Recovery-Modus &#8226; Android %1$s (API %2$d)]</string>
+    <string name="status_connected_recovery_version">Verbunden [Recovery-Modus &#8226; Android %1$s]</string>
+    <string name="status_connected_recovery_api">Verbunden [Recovery-Modus &#8226; API %1$d]</string>
+    <string name="sideload_description">Das Gerät befindet sich im Sideload-Modus. Wähle eine OTA-ZIP-Datei zum Flashen aus.</string>
+    <string name="btn_choose_file">Datei auswählen</string>
+    <string name="btn_starting">Wird gestartet...</string>
+    <string name="btn_sideload">Sideload</string>
+    <string name="msg_flash_complete">Flash-Vorgang abgeschlossen</string>
+    <string name="btn_done">Fertig</string>
+    <string name="btn_try_again">Erneut versuchen</string>
+    <string name="btn_wipe_userdata">Benutzerdaten löschen</string>
+    <string name="dialog_wipe_userdata_title">Benutzerdaten löschen?</string>
+    <string name="dialog_wipe_userdata_msg">Dadurch werden alle Benutzerdaten auf dem Gerät gelöscht. Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="btn_wipe">Löschen</string>
+
+    <!-- Scrcpy Additions -->
+    <string name="dialog_add_audio_bitrate_title">Benutzerdefinierte Audio-Bitrate hinzufügen</string>
+    <string name="dialog_add_audio_bitrate_msg">Benutzerdefinierte Audio-Bitrate in Kbps eingeben (z. B. 192, 256, 320):</string>
+    <string name="scrcpy_mirroring_failed">Bildschirmspiegelung fehlgeschlagen</string>
+    <string name="btn_dismiss">Schließen</string>
+    <string name="label_audio_bitrate">Audio-Bitrate</string>
+    <string name="codec_raw_pcm">RAW (PCM)</string>
+    <string name="err_invalid_positive_number">Bitte eine gültige positive Zahl eingeben</string>
+    <string name="scrcpy_mode_not_supported">scrcpy wird im Modus %1$s nicht unterstützt</string>
+    <string name="scrcpy_mode_not_supported_desc">Die Bildschirmspiegelung erfordert den normalen ADB-Modus und ist nicht verfügbar, solange sich das verbundene Gerät im Modus %1$s befindet.</string>
+    <string name="scrcpy_server_start_failed">Der scrcpy-Server konnte auf dem Zielgerät nicht gestartet werden. Berechtigungen oder Gerätekompatibilität prüfen.</string>
+    <string name="scrcpy_server_terminated">Der scrcpy-Serverprozess auf dem Zielgerät wurde unerwartet beendet.</string>
+
+    <!-- Local ADB Detection -->
+    <string name="local_adb_detected_title">Lokales ADB erkannt</string>
+    <string name="local_adb_detected_msg">Dioxamine hat erkannt, dass lokales kabelloses ADB auf Port %1$d aktiv ist. Möchtest du eine Verbindung zu diesem Gerät herstellen?</string>
+
+    <!-- File Manager Additions -->
+    <string name="file_manager_push_file">Datei übertragen (Push)</string>
+    <string name="file_manager_upload_failed">Hochladen von %1$s fehlgeschlagen: %2$s</string>
+    <string name="file_manager_download_success">%1$s erfolgreich heruntergeladen</string>
+    <string name="file_manager_download_failed">Download fehlgeschlagen: %1$s</string>
+    <string name="file_manager_folder_download_unsupported">Das Herunterladen von Ordnern wird beim Speichern einzelner Dateien nicht unterstützt</string>
+    <string name="file_manager_prop_name">Name</string>
+    <string name="file_manager_prop_path">Pfad</string>
+    <string name="file_manager_prop_type">Typ</string>
+    <string name="file_manager_prop_link_target">Linkziel</string>
+    <string name="file_manager_prop_size">Größe</string>
+    <string name="file_manager_prop_mode">Modus</string>
+    <string name="file_manager_prop_type_symlink">Symbolischer Link (%1$s)</string>
+    <string name="file_manager_prop_type_dir">Verzeichnis</string>
+    <string name="file_manager_prop_type_file">Datei</string>
+    <string name="file_manager_retry">Erneut versuchen</string>
+    <string name="file_manager_create">Erstellen</string>
+    <string name="file_manager_rename">Umbenennen</string>
+
+    <!-- Package Manager -->
+    <string name="pkg_manager_title">Paketmanager</string>
+    <string name="pkg_manager_subtitle">Installierte Apps verwalten, APKs/APKS herunterladen, Apps aktivieren/deaktivieren oder Pakete installieren</string>
+    <string name="pkg_manager_search_hint">Apps nach Name oder Paket suchen…</string>
+    <string name="pkg_manager_filter_all">Alle Apps</string>
+    <string name="pkg_manager_filter_user">Benutzer-Apps</string>
+    <string name="pkg_manager_filter_system">System-Apps</string>
+    <string name="pkg_manager_filter_disabled">Deaktivierte Apps</string>
+    <string name="pkg_manager_action_enable">App aktivieren</string>
+    <string name="pkg_manager_action_disable">App deaktivieren</string>
+    <string name="pkg_manager_action_pull">App herunterladen (APK extrahieren)</string>
+    <string name="pkg_manager_action_uninstall">App deinstallieren</string>
+    <string name="pkg_manager_action_force_stop">Beenden erzwingen</string>
+    <string name="pkg_manager_action_permissions">Berechtigungen erteilen</string>
+    <string name="pkg_manager_action_info">App-Info</string>
+    <string name="pkg_manager_dialog_permissions_title">Berechtigungen erteilen</string>
+    <string name="pkg_manager_custom_perm_placeholder">z. B. android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="pkg_manager_perm_prompt">Name der zu erteilenden Berechtigung eingeben:</string>
+    <string name="pkg_manager_perm_label">Berechtigungsname</string>
+    <string name="pkg_manager_perm_manifest_note">Hinweis: Die Ziel-App muss diese Berechtigung in ihrer AndroidManifest.xml deklarieren.</string>
+    <string name="pkg_manager_perm_invalid_format">Ungültiges Berechtigungsformat (z. B. android.permission.WRITE_SECURE_SETTINGS)</string>
+    <string name="pkg_manager_btn_grant">Erteilen</string>
+    <string name="pkg_manager_perm_granted">%1$s erteilt</string>
+    <string name="pkg_manager_perm_failed">Fehlgeschlagen: %1$s</string>
+    <string name="pkg_manager_force_stop_success">%1$s wurde zwangsweise beendet</string>
+    <string name="pkg_manager_install_apks">APKs installieren</string>
+    <string name="pkg_manager_installing">Paket wird auf dem Gerät installiert…</string>
+    <string name="pkg_manager_install_success">Paket erfolgreich installiert</string>
+    <string name="pkg_manager_install_failed">Installation fehlgeschlagen: %1$s</string>
+    <string name="pkg_manager_pulling">Paket wird heruntergeladen…</string>
+    <string name="pkg_manager_pull_success">%1$s erfolgreich heruntergeladen</string>
+    <string name="pkg_manager_pull_failed">Pull fehlgeschlagen: %1$s</string>
+    <string name="pkg_manager_uninstall_confirm_title">App deinstallieren?</string>
+    <string name="pkg_manager_uninstall_confirm_msg">Möchtest du %1$s (%2$s) wirklich vom Zielgerät deinstallieren?</string>
+    <string name="pkg_manager_uninstall_success">%1$s erfolgreich deinstalliert</string>
+    <string name="pkg_manager_uninstall_failed">Deinstallation fehlgeschlagen: %1$s</string>
+    <string name="pkg_manager_disable_success">%1$s deaktiviert</string>
+    <string name="pkg_manager_enable_success">%1$s aktiviert</string>
+    <string name="settings_btn_export_key">Authentifizierungsschlüssel exportieren</string>
+    <string name="msg_key_exported">ADB-Authentifizierungsschlüssel erfolgreich exportiert</string>
+    <string name="pkg_manager_empty">Keine Pakete gefunden</string>
+
+    <!-- ADB Logcat Strings -->
+    <string name="adb_logcat_tile_title">Logcat</string>
+    <string name="adb_logcat_tile_desc">System-Logs in Echtzeit mit Filtern, Suche und regulären Ausdrücken streamen</string>
+    <string name="logcat_search_hint">Logs oder regulären Ausdruck suchen…</string>
+    <string name="logcat_filter_tag_hint">Tag</string>
+    <string name="logcat_filter_pid_hint">PID</string>
+    <string name="logcat_btn_pause">Stream pausieren</string>
+    <string name="logcat_btn_resume">Stream fortsetzen</string>
+    <string name="logcat_btn_clear">Logs löschen</string>
+    <string name="logcat_btn_copy">Logs kopieren</string>
+    <string name="logcat_btn_autoscroll">Automatisch scrollen</string>
+    <string name="logcat_status_streaming">Streaming</string>
+    <string name="logcat_status_paused">Pausiert</string>
+    <string name="logcat_logs_copied">%1$d Logs in die Zwischenablage kopiert</string>
+    <string name="logcat_empty_waiting">Warte auf Geräte-Logs…</string>
+    <string name="logcat_empty_filtered">Keine Logzeilen entsprechen den aktuellen Filtern</string>
+    <string name="logcat_device_buffer_cleared">Logcat-Puffer des Geräts gelöscht</string>
+    <string name="logcat_clear_dialog_msg">Nur den lokalen Logpuffer auf dem Bildschirm löschen oder auch den internen Logcat-Puffer des Geräts leeren?</string>
+    <string name="logcat_clear_screen">Bildschirm leeren</string>
+    <string name="logcat_clear_device_buffer">Gerätepuffer leeren</string>
+    <string name="logcat_btn_toggle_filters">Suche und Filter ein-/ausblenden</string>
+
+    <!-- ADB Reboot Options Strings -->
+    <string name="adb_reboot_tile_title">Neustartoptionen</string>
+    <string name="adb_reboot_tile_desc">In System, Bootloader, Recovery oder Fastboot neu starten oder Gerät ausschalten</string>
+    <string name="adb_reboot_system_title">System neu starten</string>
+    <string name="adb_reboot_system_desc">Normaler Neustart in Android</string>
+    <string name="adb_reboot_bootloader_title">In Bootloader neu starten</string>
+    <string name="adb_reboot_bootloader_desc">In den Bootloader-/Fastboot-Modus neu starten</string>
+    <string name="adb_reboot_recovery_title">In Recovery neu starten</string>
+    <string name="adb_reboot_recovery_desc">In den Recovery-Modus neu starten</string>
+    <string name="adb_reboot_fastboot_title">In Fastboot neu starten</string>
+    <string name="adb_reboot_fastboot_desc">In fastbootd (Userspace-Fastboot) neu starten</string>
+    <string name="adb_reboot_shutdown_title">Ausschalten</string>
+    <string name="adb_reboot_shutdown_desc">Gerät ausschalten</string>
+    <string name="adb_reboot_executing">%1$s wird ausgeführt…</string>
+
+    <!-- ADB Screenshot Strings -->
+    <string name="adb_screenshot_tile_title">Screenshot</string>
+    <string name="adb_screenshot_tile_desc">Gerätebildschirm aufnehmen und Bild anzeigen oder speichern</string>
+    <string name="adb_screenshot_take_btn">Screenshot erstellen</string>
+    <string name="adb_screenshot_capturing">Screenshot wird erstellt…</string>
+    <string name="adb_screenshot_save_btn">Screenshot speichern</string>
+    <string name="adb_screenshot_saved">Screenshot erfolgreich gespeichert</string>
+    <string name="adb_screenshot_failed">Screenshot konnte nicht erstellt werden: %1$s</string>
+    <string name="adb_screenshot_empty">Tippe auf „Screenshot erstellen“, um den Bildschirm des verbundenen Geräts aufzunehmen.</string>
+
+    <!-- General Buttons -->
+    <string name="btn_back">Zurück</string>
+
+    <!-- ADB Miscellaneous Tools Strings -->
+    <string name="adb_misc_tile_title">Sonstiges</string>
+    <string name="adb_misc_tile_desc">Anzeigeeinstellungen, Entwickleranpassungen und Verknüpfungen</string>
+    <string name="adb_misc_section_app_process">App- &amp; Prozessaktionen</string>
+    <string name="adb_misc_section_display">Anzeige &amp; Ausrichtung</string>
+    <string name="adb_misc_section_system_ui">System-UI &amp; Benachrichtigungen</string>
+    <string name="adb_misc_section_dev_tweaks">Entwickler- &amp; UI-Anpassungen</string>
+    <string name="adb_misc_section_battery">Akkuemulation</string>
+    <string name="adb_misc_section_intent_url">Intent &amp; URL</string>
+
+    <string name="adb_misc_kill_app_title">Vordergrund-App beenden</string>
+    <string name="adb_misc_kill_app_desc">Erzwingt das Beenden der aktuell auf dem Zielgerät geöffneten App</string>
+    <string name="adb_misc_clear_app_title">Daten der Vordergrund-App löschen</string>
+    <string name="adb_misc_clear_app_desc">Setzt App-Daten und Cache der aktuell aktiven App zurück</string>
+
+    <string name="adb_misc_orientation_title">Bildschirmausrichtung festlegen</string>
+    <string name="adb_misc_orientation_desc">0° Hochformat, 90° Querformat, 180° umgekehrt oder 270° Querformat erzwingen</string>
+    <string name="adb_misc_auto_rotate_title">Automatische Drehung umschalten</string>
+    <string name="adb_misc_auto_rotate_desc">Bildschirmdrehung per Beschleunigungssensor ein-/ausschalten</string>
+    <string name="adb_misc_density_title">Anzeigedichte (DPI)</string>
+    <string name="adb_misc_density_desc">DPI-Skalierung ändern oder auf Gerätestandard zurücksetzen</string>
+    <string name="adb_misc_density_current">Aktuell: %1$s</string>
+    <string name="adb_misc_density_placeholder">z. B. 420</string>
+    <string name="adb_misc_resolution_title">Bildschirmauflösung</string>
+    <string name="adb_misc_resolution_desc">Bildschirmauflösung (Breite x Höhe) ändern oder zurücksetzen</string>
+    <string name="adb_misc_size_current">Aktuell: %1$s</string>
+    <string name="adb_misc_size_placeholder">z. B. 1080x2400</string>
+    <string name="adb_misc_stay_awake_title">Bildschirm eingeschaltet lassen (Stay Awake)</string>
+    <string name="adb_misc_stay_awake_desc">Verhindert, dass sich der Bildschirm des Zielgeräts bei bestehender USB-Verbindung ausschaltet</string>
+
+    <string name="adb_misc_expand_notifs_title">Benachrichtigungen ausklappen</string>
+    <string name="adb_misc_expand_notifs_desc">Öffnet die Benachrichtigungsleiste</string>
+    <string name="adb_misc_expand_qs_title">Schnelleinstellungen ausklappen</string>
+    <string name="adb_misc_expand_qs_desc">Öffnet das Kachelmenü der Schnelleinstellungen</string>
+    <string name="adb_misc_collapse_statusbar_title">Statusleiste einklappen</string>
+    <string name="adb_misc_collapse_statusbar_desc">Schließt geöffnete Benachrichtigungs- oder Schnelleinstellungsbereiche</string>
+
+    <string name="adb_misc_demo_mode_title">Demo-Modus (saubere Statusleiste)</string>
+    <string name="adb_misc_demo_mode_desc">Zeigt 100 % Akku, 12:00 Uhr und vollen Empfang an und blendet Benachrichtigungen aus</string>
+    <string name="adb_misc_show_touches_title">Berührungen anzeigen umschalten</string>
+    <string name="adb_misc_show_touches_desc">Zeigt bei Berührungen visuelle Kreise unter dem Finger an</string>
+    <string name="adb_misc_pointer_location_title">Zeigerposition umschalten</string>
+    <string name="adb_misc_pointer_location_desc">Zeigt Koordinatenlineal und Pfadüberlagerungen für Berührungen an</string>
+    <string name="adb_misc_anim_scale_title">Fensteranimationsgeschwindigkeit</string>
+    <string name="adb_misc_anim_scale_desc">Skalierung für Fenster-, Übergangs- und Animator-Dauer anpassen (0x bis 2x)</string>
+
+    <string name="adb_misc_battery_sim_title">Akkuzustand simulieren</string>
+    <string name="adb_misc_battery_sim_desc">Akkustand sowie Lade-/Entladezustand simulieren oder zurücksetzen</string>
+    <string name="adb_misc_open_url_title">URL / Deep Link öffnen</string>
+    <string name="adb_misc_open_url_desc">Beliebige Webseite oder Deep Link im Browser des Zielgeräts öffnen</string>
+    <string name="adb_misc_open_url_placeholder">https://example.com</string>
+
+    <string name="adb_misc_dialog_clear_title">Daten der aktiven App löschen?</string>
+    <string name="adb_misc_dialog_clear_msg">Möchtest du wirklich alle App-Daten, Anmeldungen und den Cache für dieses Paket dauerhaft löschen:\n\n%1$s\n\nDiese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="adb_misc_dialog_clear_btn">Daten löschen</string>
+    <string name="adb_misc_dialog_orientation_title">Ausrichtung auswählen</string>
+    <string name="adb_misc_orientation_0">0° Hochformat</string>
+    <string name="adb_misc_orientation_90">90° Querformat rechts</string>
+    <string name="adb_misc_orientation_180">180° umgekehrtes Hochformat</string>
+    <string name="adb_misc_orientation_270">270° Querformat links</string>
+    <string name="adb_misc_dialog_density_title">Anzeigedichte (DPI) festlegen</string>
+    <string name="adb_misc_density_reading">Aktuelle Anzeigedichte wird ermittelt…</string>
+    <string name="adb_misc_density_presets">Voreinstellungen</string>
+    <string name="adb_misc_density_custom_label">Benutzerdefinierter DPI-Wert (72–1200)</string>
+    <string name="adb_misc_density_invalid">Bitte einen gültigen DPI-Wert zwischen 72 und 1200 eingeben</string>
+    <string name="adb_misc_btn_apply">Anwenden</string>
+    <string name="adb_misc_btn_reset_default">Auf Standard zurücksetzen</string>
+    <string name="adb_misc_dialog_resolution_title">Bildschirmauflösung festlegen</string>
+    <string name="adb_misc_resolution_reading">Aktuelle Auflösung wird ermittelt…</string>
+    <string name="adb_misc_resolution_width">Breite</string>
+    <string name="adb_misc_resolution_height">Höhe</string>
+    <string name="adb_misc_resolution_invalid">Bitte gültige Abmessungen zwischen 240 und 10000 eingeben</string>
+    <string name="adb_misc_dialog_stay_awake_title">Bildschirm eingeschaltet lassen</string>
+    <string name="adb_misc_dialog_stay_awake_msg">Wähle aus, ob der Gerätebildschirm bei bestehender USB-Verbindung dauerhaft eingeschaltet bleiben soll.</string>
+    <string name="adb_misc_btn_stay_awake_enable">Aktivieren (Stay Awake)</string>
+    <string name="adb_misc_btn_stay_awake_disable">Deaktivieren</string>
+    <string name="adb_misc_dialog_demo_mode_title">Demo-Modus (saubere Statusleiste)</string>
+    <string name="adb_misc_dialog_demo_mode_msg">Statusleistensymbole auf 100 % Akku, 12:00 Uhr und vollen Empfang setzen oder die normale Statusleiste wiederherstellen.</string>
+    <string name="adb_misc_btn_demo_mode_enter">Demo-Modus starten</string>
+    <string name="adb_misc_btn_demo_mode_exit">Demo-Modus beenden</string>
+    <string name="adb_misc_dialog_anim_scale_title">Animationsgeschwindigkeit auswählen</string>
+    <string name="adb_misc_dialog_battery_title">Akkuzustand simulieren</string>
+    <string name="adb_misc_battery_level_label">Akkustand simulieren</string>
+    <string name="adb_misc_battery_charging_label">Ladestatus simulieren</string>
+    <string name="adb_misc_battery_btn_charging">Wird geladen</string>
+    <string name="adb_misc_battery_btn_discharging">Wird entladen</string>
+    <string name="adb_misc_battery_btn_reset">Simulation zurücksetzen</string>
+    <string name="adb_misc_dialog_open_url_title">URL auf dem Gerät öffnen</string>
+    <string name="adb_misc_dialog_open_url_msg">Webadresse oder Deep Link eingeben, die/der im Browser des Zielgeräts geöffnet werden soll:</string>
+    <string name="adb_misc_btn_open">Öffnen</string>
+
+    <string name="adb_misc_status_success">Status: Erfolgreich</string>
+    <string name="adb_misc_status_failed">Status: Fehlgeschlagen</string>
+    <string name="adb_misc_status_dismiss">Schließen</string>
+    <string name="adb_misc_not_connected">Gerät nicht verbunden</string>
+    <string name="adb_misc_no_foreground_app">Auf dem Zielgerät konnte keine aktive Vordergrund-App erkannt werden.</string>
+    <string name="adb_misc_state_enabled">Aktiviert (EIN)</string>
+    <string name="adb_misc_state_disabled">Deaktiviert (AUS)</string>
+    <string name="adb_misc_executed_success">Erfolgreich ausgeführt.</string>
+    <string name="adb_misc_btn_reset">Zurücksetzen</string>
+
+    <!-- Fastboot Tab Strings -->
+    <string name="fastboot_tab_actions">Aktionen</string>
+    <string name="fastboot_tab_shell">Shell</string>
+    <string name="fastboot_connected">Verbunden</string>
+    <string name="fastboot_detected_not_connected">Erkannt &#8212; nicht verbunden</string>
+    <string name="fastboot_retry">Erneut versuchen</string>
+    <string name="fastboot_disconnect">Trennen</string>
+    <string name="fastboot_no_device_warning">Kein Fastboot-Gerät verbunden. Verbinde ein Gerät im Fastboot-Modus, um diese Aktionen zu verwenden.</string>
+    <string name="fastboot_tile_reboot_title">Neustart</string>
+    <string name="fastboot_tile_reboot_desc">In System, Bootloader, Recovery oder fastbootd neu starten</string>
+    <string name="fastboot_tile_flash_title">Image flashen</string>
+    <string name="fastboot_tile_flash_desc">Image über die Dateiauswahl auswählen und auf eine Partition flashen</string>
+    <string name="fastboot_tile_boot_title">Image booten</string>
+    <string name="fastboot_tile_boot_desc">Image vorbereiten und booten, ohne es zu flashen</string>
+    <string name="fastboot_tile_lock_title">Sperrstatus</string>
+    <string name="fastboot_tile_lock_desc">Bootloader entsperren oder sperren</string>
+    <string name="fastboot_tile_vars_title">Gerätevariablen</string>
+    <string name="fastboot_tile_vars_desc">Bootloader-Variablen über getvar auslesen</string>
+    <string name="fastboot_log_title">Log</string>
+    <string name="fastboot_clear_log">Log löschen</string>
+    <string name="fastboot_shell_hint">Unten einen Befehl eingeben oder auf Hilfe tippen.</string>
+
+    <string name="fastboot_reboot_title">Neustart</string>
+    <string name="fastboot_reboot_system_title">System neu starten</string>
+    <string name="fastboot_reboot_system_desc">Normaler Neustart in das Betriebssystem</string>
+    <string name="fastboot_reboot_bootloader_title">In Bootloader neu starten</string>
+    <string name="fastboot_reboot_bootloader_desc">Zurück in den Bootloader neu starten</string>
+    <string name="fastboot_reboot_recovery_title">In Recovery neu starten</string>
+    <string name="fastboot_reboot_recovery_desc">In den Recovery-Modus neu starten</string>
+    <string name="fastboot_reboot_fastboot_title">In Fastboot neu starten</string>
+    <string name="fastboot_reboot_fastboot_desc">In fastbootd (Userspace-Fastboot) neu starten</string>
+    <string name="fastboot_continue_boot_title">Bootvorgang fortsetzen</string>
+    <string name="fastboot_continue_boot_desc">Normalen Bootvorgang aus dem Bootloader fortsetzen, ohne neu zu starten</string>
+    <string name="fastboot_shutdown_title">Ausschalten</string>
+    <string name="fastboot_shutdown_desc">Gerät ausschalten</string>
+    <string name="fastboot_lock_title">Bootloader-Sperrstatus</string>
+    <string name="fastboot_lock_warning">Das Entsperren oder Sperren des Bootloaders kann die Benutzerdaten auf dem Gerät löschen.</string>
+    <string name="fastboot_unlock_bootloader_title">Bootloader entsperren</string>
+    <string name="fastboot_lock_bootloader_title">Bootloader sperren</string>
+    <string name="fastboot_unlock_critical_title">Kritische Partitionen entsperren</string>
+    <string name="fastboot_lock_critical_title">Kritische Partitionen sperren</string>
+    <string name="fastboot_check_unlock_title">Entsperrbarkeit prüfen</string>
+
+    <string name="fastboot_vars_title">Gerätevariablen</string>
+    <string name="fastboot_vars_desc">Eine bestimmte Bootloader-Variable auslesen oder alle Variablen auf einmal abrufen.</string>
+    <string name="fastboot_var_name_label">Variablenname (z. B. product, version-bootloader)</string>
+    <string name="fastboot_btn_get_all">Alle abrufen</string>
+    <string name="fastboot_btn_get_var">Variable abrufen</string>
+
+    <string name="fastboot_working_placeholder">Wird ausgeführt...</string>
+    <string name="fastboot_op_in_progress">Vorgang läuft...</string>
+    <string name="fastboot_op_done">%1$s abgeschlossen</string>
+    <string name="fastboot_op_failed">%1$s fehlgeschlagen</string>
+    <string name="fastboot_flash_title">Image flashen</string>
+    <string name="fastboot_flash_desc">Wähle eine Image-Datei aus, die auf eine Partition des Geräts geflasht werden soll. Der Partitionsname wird aus dem Dateinamen vorausgefüllt, kann aber geändert werden.</string>
+    <string name="fastboot_choose_image">Image auswählen</string>
+    <string name="fastboot_no_file_selected">Keine Datei ausgewählt</string>
+    <string name="fastboot_dialog_flash_partition_title">Auf Partition flashen</string>
+    <string name="fastboot_dialog_flash_partition_msg">Partitionsnamen eingeben, auf den „%1$s“ geflasht werden soll.</string>
+    <string name="fastboot_partition_name_label">Partitionsname</string>
+    <string name="fastboot_btn_flash">Flashen</string>
+    <string name="fastboot_btn_cancel">Abbrechen</string>
+    <string name="fastboot_boot_title">Image booten</string>
+    <string name="fastboot_boot_desc">Bereitet ein Image auf dem Gerät vor und bootet es einmalig, ohne es auf eine Partition zu flashen.</string>
+    <string name="fastboot_choose_image_and_boot">Image auswählen und booten</string>
+
+    <string name="fastboot_shell_placeholder">reboot, getvar product, flash boot, help ...</string>
+    <string name="fastboot_raw_path_warning_title">Direkter Pfad erkannt</string>
+    <string name="fastboot_raw_path_warning_msg">„%1$s“ wird nicht unterstützt &#8212; diese App kann keine beliebigen Dateipfade lesen. Wähle die Datei stattdessen über die Anhängen-Schaltfläche aus.</string>
+    <string name="fastboot_proceed_anyway">Trotzdem fortfahren</string>
+
+    <!-- Remote Control Strings -->
+    <string name="remote_control_title">Remote-Steuerung</string>
+    <string name="remote_control_desc">Standard-Android- und Android-TV-Geräte wie mit einer physischen Fernbedienung steuern</string>
+    <string name="remote_mode_auto">Automatisch erkennen</string>
+    <string name="remote_mode_tv">Android TV</string>
+    <string name="remote_mode_standard">Standard-Android</string>
+    <string name="remote_detected_tv">Android TV erkannt</string>
+    <string name="remote_detected_standard">Standard-Android erkannt</string>
+    <string name="remote_section_navigation">Steuerkreuz</string>
+    <string name="remote_section_system">System &amp; Wiedergabe</string>
+    <string name="remote_section_tv_controls">TV-Steuerung</string>
+    <string name="remote_section_text_input">Texteingabe</string>
+    <string name="remote_btn_send_text">Text senden</string>
+    <string name="remote_text_placeholder">Text für das aktive Feld eingeben...</string>
+    <string name="remote_tv_guide">Programmführer</string>
+    <string name="remote_tv_input">Quelle</string>
+    <string name="remote_tv_ch_up">Kanal +</string>
+    <string name="remote_tv_ch_down">Kanal -</string>
+    <string name="remote_tv_search">Suchen</string>
+
+    <!-- Touchpad & Virtual Mouse/Keyboard Strings -->
+    <string name="touchpad_title">Touchpad &amp; Maus</string>
+    <string name="touchpad_desc">Cursor des Zielgeräts mit virtuellem Touchpad und Hardwaretastatur steuern</string>
+    <string name="tab_touchpad">Touchpad</string>
+    <string name="tab_keyboard">PC-Tastatur</string>
+    <string name="touchpad_connecting">Virtuelle Eingabegeräte werden initialisiert...</string>
+    <string name="touchpad_connected">Virtuelle Maus &amp; Tastatur aktiv</string>
+    <string name="touchpad_surface_hint">Wischen zum Bewegen &#8226; Tippen für Linksklick &#8226; Halten für Rechtsklick &#8226; Mit 2 Fingern scrollen</string>
+    <string name="touchpad_btn_left">Links</string>
+    <string name="touchpad_btn_right">Rechts</string>
+    <string name="touchpad_btn_middle">Mitte</string>
+    <string name="touchpad_sensitivity">Zeigerempfindlichkeit</string>
+    <string name="touchpad_keyboard_section">Hardwaretastatur</string>
+    <string name="touchpad_modifiers">Modifikatortasten</string>
+    <string name="touchpad_functions">Funktionstasten</string>
+    <string name="touchpad_shortcuts">Tastenkürzel</string>
+    <string name="touchpad_navigation">Navigation</string>
+    <string name="touchpad_numpad">Ziffernblock</string>
+    <string name="touchpad_soft_keyboard">Bildschirmtastatur</string>
+    <string name="touchpad_toggle_ime">Tastatur umschalten</string>
+    <string name="touchpad_type_here">Hier tippen für sofortige Tasteneingaben in Echtzeit...</string>
+    <string name="touchpad_realtime_typing_hint">Echtzeiteingabe aktiviert. Zeichen und Rückschritte werden sofort übertragen.</string>
+    <string name="touchpad_error_title">Fehler bei virtueller Eingabe</string>
+    <string name="touchpad_error_desc">Virtuelle Maus/Tastatur (/dev/uhid) konnte nicht initialisiert werden. Falls zutreffend, stelle sicher, dass Entwickleroptionen &gt; USB-Debugging (Sicherheitseinstellungen) aktiviert ist.</string>
+
+
+    <!-- Daemon Control & Connection Strings -->
+    <string name="daemon_dialog_title">Daemon-Antwort</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_restart">Neu starten</string>
+    <string name="cd_daemon_options">Daemon-Optionen</string>
+    <string name="action_switch_tcpip">Auf TCP/IP umstellen</string>
+    <string name="action_root_daemon">Daemon als Root ausführen</string>
+    <string name="action_unroot_daemon">Root für Daemon deaktivieren</string>
+    <string name="dialog_tcpip_title">adbd mit TCP/IP neu starten</string>
+    <string name="dialog_tcpip_msg">Port für kabelloses ADB eingeben:</string>
+    <string name="cd_pair_qr">Mit QR-Code koppeln</string>
+    <string name="cd_close">Schließen</string>
+
+    <!-- Discovery Sheet Strings -->
+    <string name="discovery_title">Geräte suchen</string>
+    <string name="discovery_searching">Suche nach Geräten mit aktiviertem kabellosem Debugging…</string>
+    <string name="discovery_no_devices_found">Noch keine Geräte gefunden</string>
+    <string name="discovery_network_hint">Stelle sicher, dass kabelloses Debugging aktiviert ist und beide Geräte dasselbe Netzwerk verwenden</string>
+    <string name="discovery_btn_manual_entry">Verbindungsdaten manuell eingeben</string>
+    <string name="discovery_conn_type">Verbindungstyp</string>
+    <string name="discovery_plain_tcp">Einfaches TCP (Legacy, Port 5555)</string>
+    <string name="discovery_wireless_tls">Kabelloses Debugging (TLS)</string>
+    <string name="discovery_connect_tcp">Über TCP verbinden</string>
+    <string name="discovery_wireless_debugging">Kabelloses Debugging</string>
+    <string name="discovery_pair_first_hint">Falls dieses Gerät noch nicht gekoppelt wurde, kopple es zuerst.</string>
+    <string name="discovery_pair_with_code">Mit Code koppeln</string>
+    <string name="discovery_connect_already_paired">Verbinden (bereits gekoppelt)</string>
+    <string name="discovery_connect_tls">Verbinden (TLS)</string>
+    <string name="discovery_paired_success_connecting">Erfolgreich gekoppelt! Verbindung zum erkannten Endpunkt für kabelloses Debugging wird hergestellt…</string>
+    <string name="discovery_pair_instead">Stattdessen koppeln</string>
+    <string name="discovery_pair_device">Gerät koppeln</string>
+    <string name="discovery_pairing_port">Kopplungsport</string>
+    <string name="discovery_pairing_code">Kopplungscode</string>
+    <string name="discovery_btn_pair">Koppeln</string>
+
+    <!-- QR Code Pairing Strings -->
+    <string name="qr_starting_server">Kopplungsserver wird gestartet…</string>
+    <string name="cd_qr_code">QR-Code zur Kopplung</string>
+    <string name="qr_instruction">Öffne auf deinem Gerät Einstellungen &gt; Entwickleroptionen &gt; Kabelloses Debugging &gt; Gerät mit QR-Code koppeln und scanne anschließend diesen Code.</string>
+    <string name="qr_wifi_hint">Beide Geräte müssen sich im selben WLAN befinden.</string>
+    <string name="qr_paired_success">Erfolgreich gekoppelt</string>
+    <string name="qr_connecting">Verbindung wird hergestellt…</string>
+    <string name="qr_waiting_discoverable">Warte darauf, dass das Gerät gefunden werden kann…</string>
+    <string name="qr_pairing_failed">Kopplung fehlgeschlagen</string>
+
+    <!-- About Section Strings -->
+    <string name="settings_about_title">Über Dioxamine</string>
+    <string name="settings_about_desc">App-Informationen, Community-Links und Repository</string>
+    <string name="settings_about_version">Version %1$s</string>
+    <string name="settings_about_documentation">Dokumentation</string>
+    <string name="settings_about_source_code">Quellcode</string>
+    <string name="settings_about_donate">Spenden</string>
+    <string name="settings_about_check_updates">Nach Updates suchen</string>
+    <string name="settings_about_checking_updates">Suche nach Updates…</string>
+    <string name="update_dialog_title">Update verfügbar</string>
+    <string name="update_dialog_msg">Eine neue Version (%1$s) ist verfügbar.\n\nAktuelle Version: %2$s</string>
+    <string name="update_btn_download">Herunterladen</string>
+    <string name="update_already_latest">Du verwendest bereits die neueste Version</string>
+    <string name="update_check_failed">Suche nach Updates fehlgeschlagen: %1$s</string>
+    <string name="update_checking">Suche nach Updates…</string>
+    <string name="cd_github">GitHub</string>
+    <string name="cd_telegram">Telegram</string>
+
+    <!-- Additional localized UI and accessibility strings -->
+    <string name="cd_run">Ausführen</string>
+    <string name="cd_send">Senden</string>
+    <string name="cd_scroll_to_bottom">Nach unten scrollen</string>
+    <string name="cd_restart_shell">Shell neu starten</string>
+    <string name="cd_select_mode">Modus auswählen</string>
+    <string name="cd_open_touchpad">Touchpad öffnen</string>
+    <string name="cd_power">Ein/Aus</string>
+    <string name="cd_mute">Stummschalten</string>
+    <string name="cd_volume_down">Leiser</string>
+    <string name="cd_volume_up">Lauter</string>
+    <string name="cd_nav_menu">Menü</string>
+    <string name="cd_nav_up">Nach oben</string>
+    <string name="cd_nav_down">Nach unten</string>
+    <string name="cd_nav_left">Nach links</string>
+    <string name="cd_nav_right">Nach rechts</string>
+    <string name="cd_previous">Zurück</string>
+    <string name="cd_rewind">Zurückspulen</string>
+    <string name="cd_play_pause">Wiedergabe/Pause</string>
+    <string name="cd_fast_forward">Vorspulen</string>
+    <string name="cd_next">Weiter</string>
+    <string name="cd_keyboard">Tastatur</string>
+    <string name="cd_send_text">Text senden</string>
+    <string name="cd_toggle_numpad">Ziffernblock umschalten</string>
+    <string name="cd_sensitivity_settings">Empfindlichkeitseinstellungen</string>
+    <string name="cd_hide_keyboard">Tastatur ausblenden</string>
+    <string name="cd_symlink">Symbolischer Link</string>
+    <string name="cd_actions">Aktionen</string>
+    <string name="cd_copy_logs_to_clipboard">Logs in die Zwischenablage kopieren</string>
+    <string name="cd_clear_logs">Logs löschen</string>
+    <string name="cd_export_logs_zip">Logs als ZIP exportieren</string>
+
+    <string name="status_disconnected">Getrennt</string>
+    <string name="msg_export_failed">Export fehlgeschlagen: %1$s</string>
+    <string name="err_no_adb_key_file">Keine ADB-Schlüsseldatei gefunden</string>
+    <string name="err_save_file_failed">Datei konnte nicht gespeichert werden</string>
+
+    <string name="camera_selector">Kameraauswahl</string>
+    <string name="camera_label_format">Kamera %1$s (%2$s)</string>
+    <string name="camera_resolution">Kameraauflösung</string>
+    <string name="camera_frame_rate">Kamera-Bildrate</string>
+    <string name="scrcpy_logs_client">Client</string>
+    <string name="scrcpy_logs_server">Server</string>
+    <string name="scrcpy_logs_exported">Logs exportiert</string>
+    <string name="scrcpy_logs_export_failed">Export fehlgeschlagen</string>
+
+    <string name="pkg_manager_dump_failed">Pakete konnten nicht geladen werden: %1$s</string>
+    <string name="pkg_manager_name_copied">Paketname kopiert</string>
+    <string name="pkg_manager_copy_package">Paket kopieren</string>
+    <string name="pkg_manager_app_settings">App-Einstellungen</string>
+    <string name="pkg_info_package_name">Paketname</string>
+    <string name="pkg_info_version_name">Versionsname</string>
+    <string name="pkg_info_version_code">Versionscode</string>
+    <string name="pkg_info_target_sdk">Ziel-SDK</string>
+    <string name="pkg_info_min_sdk">Minimales SDK</string>
+    <string name="pkg_info_uid">UID</string>
+    <string name="pkg_info_installer">Installer</string>
+    <string name="pkg_info_source_dir">Quellverzeichnis</string>
+    <string name="pkg_info_data_dir">Datenverzeichnis</string>
+    <string name="pkg_info_first_installed">Erstinstallation</string>
+    <string name="pkg_info_last_updated">Zuletzt aktualisiert</string>
+    <string name="pkg_info_split_apks">Split-APKs (%1$d):</string>
+    <string name="pkg_info_not_available">Nicht verfügbar</string>
+
+    <string name="remote_detecting_device">Gerätetyp wird erkannt…</string>
+    <string name="remote_mode_tv_detected">Android TV (erkannt)</string>
+    <string name="remote_mode_standard_detected">Standard-Android (erkannt)</string>
+    <string name="remote_media_controls">Mediensteuerung</string>
+    <string name="remote_numeric_keypad">Ziffernblock</string>
+    <string name="touchpad_type">Tippen</string>
+    <string name="adb_ip_placeholder">IP eingeben</string>
+    <string name="cd_choose_save_location">Speicherort auswählen</string>
+    <string name="cd_attach_image">Image anhängen</string>
+    <string name="touchpad_error_details">Details: %1$s</string>
+    <string name="shell_error_message">Shell-Fehler: %1$s</string>
+    <string name="shell_live_hint">Befehlen kein &quot;adb shell&quot; voranstellen — dies ist die Live-Shell des Geräts.</string>
+    <string name="pkg_badge_system">System</string>
+    <string name="pkg_badge_disabled">Deaktiviert</string>
+    <string name="pkg_badge_splits">Splits (%1$d)</string>
+
+    <string name="btn_refresh">Aktualisieren</string>
+    <string name="btn_retry">Erneut versuchen</string>
+
+    <!-- Process Manager Strings -->
+    <string name="proc_manager_title">Prozessmanager</string>
+    <string name="proc_manager_subtitle">CPU/RAM in Echtzeit überwachen sowie laufende Prozesse prüfen und verwalten</string>
+    <string name="proc_manager_ram_usage">Arbeitsspeicher</string>
+    <string name="proc_manager_ram_used_format">%1$s / %2$s (%3$d%% belegt)</string>
+    <string name="proc_manager_cpu_usage">CPU-Auslastung</string>
+    <string name="proc_manager_cpu_format">%1$s · %2$d Kerne</string>
+    <string name="proc_manager_processes_count">%1$d Prozesse (%2$d Apps, %3$d System)</string>
+    <string name="proc_manager_search_placeholder">Prozess, App oder PID suchen…</string>
+    <string name="proc_filter_all">Alle (%1$d)</string>
+    <string name="proc_filter_apps">Apps (%1$d)</string>
+    <string name="proc_filter_system">System (%1$d)</string>
+    <string name="proc_sort_ram">RAM (hoch nach niedrig)</string>
+    <string name="proc_sort_cpu">CPU (hoch nach niedrig)</string>
+    <string name="proc_sort_pid">PID (niedrig nach hoch)</string>
+    <string name="proc_sort_name">Name (A bis Z)</string>
+    <string name="proc_action_force_stop">Beenden erzwingen</string>
+    <string name="proc_action_kill_pid">PID beenden</string>
+    <string name="proc_btn_force_stop">Beenden erzwingen</string>
+    <string name="proc_btn_kill">Beenden</string>
+    <string name="proc_dialog_force_stop_title">%1$s zwangsweise beenden?</string>
+    <string name="proc_dialog_force_stop_msg">Das erzwungene Beenden dieser App beendet sofort alle aktiven Prozesse und Hintergrunddienste der App.</string>
+    <string name="proc_dialog_kill_pid_title">Prozess %1$s (PID %2$d) beenden?</string>
+    <string name="proc_dialog_kill_pid_msg">Das Senden von SIGKILL (Signal 9) beendet diesen Prozess sofort. Nicht gespeicherte Daten können verloren gehen.</string>
+    <string name="proc_toast_force_stop_success">%1$s zwangsweise beendet</string>
+    <string name="proc_toast_force_stop_failed">%1$s konnte nicht zwangsweise beendet werden: %2$s</string>
+    <string name="proc_toast_kill_success">PID %1$d beendet</string>
+    <string name="proc_toast_kill_failed">PID %1$d konnte nicht beendet werden: %2$s</string>
+    <string name="proc_auto_refresh_on">Automatische Aktualisierung (EIN)</string>
+    <string name="proc_auto_refresh_off">Automatische Aktualisierung (AUS)</string>
+    <string name="proc_empty_list">Keine passenden Prozesse gefunden.</string>
+    <string name="proc_loading">Verbindung mit DioxAgent wird hergestellt &amp; Prozesse werden geladen…</string>
+    <string name="proc_badge_threads">%1$d Threads</string>
+    <string name="proc_badge_pid">PID: %1$d</string>
+    <string name="proc_badge_uid">UID: %1$d</string>
+    <string name="proc_badge_cpu">%1$s CPU</string>
+
+    <!-- Scrcpy Recording -->
+    <string name="scrcpy_tab_recordings">Aufnahmen</string>
+    <string name="scrcpy_recording_started">Aufnahme gestartet</string>
+    <string name="scrcpy_recording_stopped">Aufnahme gespeichert</string>
+    <string name="scrcpy_recording_empty">Noch keine Aufnahmen</string>
+    <string name="scrcpy_recording_empty_subtitle">Aufnahmen erscheinen hier, nachdem du eine Spiegelungssitzung aufgezeichnet hast</string>
+    <string name="scrcpy_recording_delete_confirm">Diese Aufnahme löschen?</string>
+    <string name="scrcpy_recording_delete_confirm_msg">Diese Aktion kann nicht rückgängig gemacht werden.</string>
+    <string name="scrcpy_recording_exported">Aufnahme exportiert</string>
+    <string name="scrcpy_recording_export_failed">Export fehlgeschlagen</string>
+    <string name="scrcpy_recording_deleted">Aufnahme gelöscht</string>
+    <string name="scrcpy_recording_codec_warning">Aufnahme wird mit diesem Codec nicht unterstützt</string>
+    <string name="scrcpy_recording_elapsed">REC %1$s</string>
+    <string name="btn_delete">Löschen</string>
+    <string name="btn_export">Exportieren</string>
+    <string name="settings_scrcpy_auto_record_title">Sitzungen automatisch aufzeichnen</string>
+    <string name="settings_scrcpy_auto_record_subtitle">Aufnahme automatisch starten, sobald die Spiegelung beginnt</string>
+
+    <!-- Miscellaneous Settings -->
+    <string name="settings_misc_title">Sonstiges</string>
+    <string name="settings_misc_desc">Hintergrundverhalten und allgemeine Optionen</string>
+    <string name="settings_keep_alive_title">Im Hintergrund aktiv halten</string>
+    <string name="settings_keep_alive_desc">Hintergrunddienst aktiv halten, damit Verbindungen bestehen bleiben, wenn die App minimiert ist</string>
+    <string name="notification_channel_keep_alive_name">Keep-Alive-Dienst</string>
+    <string name="notification_channel_keep_alive_desc">Benachrichtigung, die angezeigt wird, während Dioxamine im Hintergrund aktiv gehalten wird</string>
+    <string name="notification_keep_alive_title">Dioxamine Keep Alive</string>
+    <string name="notification_keep_alive_text">Dioxamine ist im Hintergrund aktiv</string>
+    <string name="notification_keep_alive_no_devices">Keine Geräte verbunden &#8226; Im Hintergrund aktiv</string>
+    <plurals name="notification_adb_devices">
+        <item quantity="one">%1$d ADB-Gerät verbunden</item>
+        <item quantity="other">%1$d ADB-Geräte verbunden</item>
+    </plurals>
+    <plurals name="notification_fastboot_devices">
+        <item quantity="one">%1$d Fastboot-Gerät verbunden</item>
+        <item quantity="other">%1$d Fastboot-Geräte verbunden</item>
+    </plurals>
+    <string name="notification_keep_alive_stop_action">Stoppen</string>
+    <string name="settings_battery_opt_denied_warning">Akkuoptimierung wurde nicht deaktiviert. Hintergrundverbindungen können im Doze-Modus unterbrochen werden.</string>
+    <string name="settings_notif_perm_denied_warning">Benachrichtigungsberechtigung verweigert. Die Hintergrundstatus-Benachrichtigung ist nicht sichtbar.</string>
+</resources>

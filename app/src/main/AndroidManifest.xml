@@ -24,11 +24,34 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:launchMode="singleTop"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Open plugin archives directly from Android file managers. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-zip-compressed" />
+                <data android:mimeType="application/x-zip" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:mimeType="application/vnd.dioxamine.plugin+zip" />
+            </intent-filter>
+
+            <!-- Also support "Share/Open with" style file managers. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-zip-compressed" />
+                <data android:mimeType="application/x-zip" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:mimeType="application/vnd.dioxamine.plugin+zip" />
             </intent-filter>
         </activity>
 

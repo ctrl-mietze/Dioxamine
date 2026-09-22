@@ -1,8 +1,12 @@
 package io.github.rhythmcache.dioxamine
 
+import android.content.ContentResolver
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
@@ -49,10 +53,14 @@ enum class Tab(@StringRes val labelRes: Int, val icon: androidx.compose.ui.graph
 }
 
 class MainActivity : AppCompatActivity() {
+    private var pendingPluginImportUri by mutableStateOf<Uri?>(null)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
+
+        capturePluginImportIntent(intent)
 
         val prefs = getSharedPreferences("settings", Context.MODE_PRIVATE)
         if (prefs.getBoolean("keep_alive_enabled", false)) {
@@ -87,14 +95,78 @@ class MainActivity : AppCompatActivity() {
             }
 
             DioxamineTheme(appTheme = currentAppTheme, useMonet = currentUseMonet) {
-                DioxamineApp(keyDir = filesDir)
+                DioxamineApp(
+                    keyDir = filesDir,
+                    externalPluginUri = pendingPluginImportUri,
+                    onExternalPluginHandled = { pendingPluginImportUri = null },
+                )
             }
         }
     }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        capturePluginImportIntent(intent)
+    }
+
+    private fun capturePluginImportIntent(incoming: Intent?) {
+        val action = incoming?.action ?: return
+        if (action != Intent.ACTION_VIEW && action != Intent.ACTION_SEND) return
+
+        val uri =
+            when (action) {
+                Intent.ACTION_VIEW ->
+                    incoming.data ?: incoming.clipData?.takeIf { it.itemCount > 0 }?.getItemAt(0)?.uri
+
+                Intent.ACTION_SEND ->
+                    extractSharedUri(incoming)
+                        ?: incoming.clipData?.takeIf { it.itemCount > 0 }?.getItemAt(0)?.uri
+
+                else -> null
+            } ?: return
+
+        // Dioxamine only needs read access. Let PluginInstaller validate whether the
+        // incoming stream is actually a valid plugin ZIP.
+        if (uri.scheme != ContentResolver.SCHEME_CONTENT && uri.scheme != ContentResolver.SCHEME_FILE) {
+            return
+        }
+
+        val takeFlags =
+            incoming.flags and
+                (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+
+        if (
+            uri.scheme == ContentResolver.SCHEME_CONTENT &&
+                incoming.flags and Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION != 0 &&
+                takeFlags != 0
+        ) {
+            runCatching {
+                contentResolver.takePersistableUriPermission(uri, takeFlags)
+            }
+        }
+
+        pendingPluginImportUri = uri
+
+        // Consume the file intent. This prevents the same archive from being
+        // re-installed after an Activity recreation / configuration change.
+        setIntent(
+            Intent(Intent.ACTION_MAIN)
+                .setClass(this, MainActivity::class.java)
+                .addCategory(Intent.CATEGORY_LAUNCHER),
+        )
+    }
+
+    @Suppress("DEPRECATION")
+    private fun extractSharedUri(intent: Intent): Uri? =
+        intent.getParcelableExtra(Intent.EXTRA_STREAM) as? Uri
 }
 
 @Composable
-fun DioxamineApp(keyDir: File) {
+fun DioxamineApp(
+    keyDir: File,
+    externalPluginUri: Uri? = null,
+    onExternalPluginHandled: () -> Unit = {},
+) {
     val context = LocalContext.current
     var selectedTab by rememberSaveable { mutableStateOf(Tab.ADB) }
     val vm: AdbViewModel = viewModel(factory = object : androidx.lifecycle.ViewModelProvider.Factory {
@@ -111,6 +183,41 @@ fun DioxamineApp(keyDir: File) {
     val permissionGate = remember { io.github.rhythmcache.dioxamine.plugin.PluginPermissionGate(store = permissionStore) }
     val dialogGate = remember { io.github.rhythmcache.dioxamine.plugin.PluginDialogGate() }
     val safBridge = remember { io.github.rhythmcache.dioxamine.plugin.PluginSafBridge(context.applicationContext) }
+
+    LaunchedEffect(externalPluginUri) {
+        val uri = externalPluginUri ?: return@LaunchedEffect
+        selectedTab = Tab.PLUGINS
+
+        val result =
+            runCatching { pluginRepo.install(uri) }
+                .getOrElse { error ->
+                    io.github.rhythmcache.dioxamine.plugin.PluginInstallResult.Error(
+                        error.message ?: "Failed to import plugin",
+                    )
+                }
+
+        val message =
+            when (result) {
+                is io.github.rhythmcache.dioxamine.plugin.PluginInstallResult.Installed ->
+                    context.getString(R.string.plugins_msg_installed, result.manifest.name)
+
+                is io.github.rhythmcache.dioxamine.plugin.PluginInstallResult.Updated ->
+                    context.getString(
+                        R.string.plugins_msg_updated,
+                        result.new.name,
+                        result.new.version,
+                    )
+
+                is io.github.rhythmcache.dioxamine.plugin.PluginInstallResult.UpdateRejected ->
+                    context.getString(R.string.plugins_msg_rejected)
+
+                is io.github.rhythmcache.dioxamine.plugin.PluginInstallResult.Error ->
+                    context.getString(R.string.plugins_msg_error, result.message)
+            }
+
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        onExternalPluginHandled()
+    }
 
     io.github.rhythmcache.dioxamine.plugin.PluginPermissionDialogHost(permissionGate)
     io.github.rhythmcache.dioxamine.plugin.PluginDialogHost(dialogGate)
